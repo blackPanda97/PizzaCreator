@@ -6,15 +6,22 @@ from tkinter import ttk
 class RightFrame(ttk.Frame):
     def __init__(self, container):
         super().__init__(container)
+        self.invoke_widget()
+
+    def invoke_widget(self):
+        self.label = Label(self, text="Welcome").grid(row=0, column=0)
 
 
-class LeftFrame(ttk.Frame):
+class LeftFrame(tkinter.Tk):
     def __init__(self, container):
         super().__init__(container)
         self.invoke_widgets()
 
     def invoke_widgets(self):
-        self.b1 = Button(self, text="Order").grid(row=0, column=0)
+        b1_img = Image("img/delivery.png")
+        b1_img = b1_img.resize((100,100))
+        self.b1 = Button(self, text="Order", image=b1_img, width=100, height=100).grid(row=0, column=0)
+
         self.b2 = Button(self, text="Menu").grid(row=0, column=1)
         self.b3 = Button(self, text="Pizza Maintain").grid(row=1, column=0)
         self.b4 = Button(self, text="Help").grid(row=1, column=1)
