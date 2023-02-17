@@ -1,16 +1,42 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+import tkinter
+from tkinter import *
+from tkinter import ttk
 
 
-# Press the green button in the gutter to run the script.
+class RightFrame(ttk.Frame):
+    def __init__(self, container):
+        super().__init__(container)
+
+
+class LeftFrame(ttk.Frame):
+    def __init__(self, container):
+        super().__init__(container)
+        self.invoke_widgets()
+
+    def invoke_widgets(self):
+        self.b1 = Button(self, text="Order").grid(row=0, column=0)
+        self.b2 = Button(self, text="Menu").grid(row=0, column=1)
+        self.b3 = Button(self, text="Pizza Maintain").grid(row=1, column=0)
+        self.b4 = Button(self, text="Help").grid(row=1, column=1)
+
+
+class MainWindow(tkinter.Tk):
+    def __init__(self):
+        super().__init__()
+# Main Window Configuration
+        self.title("RODO Agreement Auto-Filler")
+        self.minsize(1000, 400)
+
+        self.invoke_widgets()
+
+    def invoke_widgets(self):
+        right_frame = RightFrame(self)
+        right_frame.grid(row=0, column=1)
+
+        left_frame = LeftFrame(self)
+        left_frame.grid(row=0, column=0)
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    m = MainWindow()
+    m.mainloop()
