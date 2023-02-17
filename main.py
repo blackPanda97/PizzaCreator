@@ -19,7 +19,7 @@ class LeftFrame(tkinter.Tk):
 
     def invoke_widgets(self):
         b1_img = Image("img/delivery.png")
-        b1_img = b1_img.resize((100,100))
+        b1_img = b1_img.resize((100, 100))
         self.b1 = Button(self, text="Order", image=b1_img, width=100, height=100).grid(row=0, column=0)
 
         self.b2 = Button(self, text="Menu").grid(row=0, column=1)
