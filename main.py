@@ -3,6 +3,7 @@ import customtkinter as csTK
 import left_frame as lf
 import right_frame as rf
 
+
 class MainWindow(csTK.CTk):
     def __init__(self):
         super().__init__()

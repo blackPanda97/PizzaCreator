@@ -1,6 +1,7 @@
 from main import *
 
 
+
 class RightFrame(csTK.CTkFrame):
 
     def __init__(self, container):
