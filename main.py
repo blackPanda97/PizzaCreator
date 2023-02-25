@@ -11,7 +11,7 @@ class MainWindow(csTK.CTk):
         self.title("RODO Agreement Auto-Filler")
         self.minsize(1700, 400)
 
-        right_frame = rf.RightFrame(self)
+        right_frame = rf.RightFrame(self, 2)
         right_frame.grid(row=0, column=1)
 
 

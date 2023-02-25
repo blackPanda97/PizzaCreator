@@ -3,10 +3,12 @@ from main import *
 
 
 class RightFrame(csTK.CTkFrame):
+    right_windows = [w_menu, w_order, w_maintain, w_help]
+    w_menu = menu
 
-    def __init__(self, container):
+    def __init__(self, container, choice: int):
         super().__init__(container)
-        self.invoke_widget()
+        self.choice = choice
+        self.container = container
+        def window_to_show(self):
 
-    def invoke_widget(self):
-        self.label = csTK.CTkLabel(self, text="Welcome").grid(row=0, column=0)

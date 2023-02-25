@@ -1,6 +1,7 @@
 import customtkinter
 from PIL import Image
 from main import *
+from right_frame import RightFrame
 
 
 class LeftFrame(csTK.CTkFrame):
@@ -8,14 +9,8 @@ class LeftFrame(csTK.CTkFrame):
     def __init__(self, container):
         super().__init__(container)
 # Adding Button Functions
-        def b1_func(self):
-            print("loool")
-
-        def b2_func():
-            print("welcum")
-
-        def b3_func():
-            print("welcum")
+        def b_func(self, x):
+            print(x)
 
 # Specyfing Button Font, Border Width, Colour
         button_font = csTK.CTkFont(family="Arial", size=40, weight="bold")
@@ -34,16 +29,16 @@ class LeftFrame(csTK.CTkFrame):
                                  image=b1_img,  fg_color="#7B3296",
                                  height=200,
                                  border_width=button_bd_width, border_spacing=button_bd_spacing, border_color=button_bd_colour,
-                                 command=self.b1_func()).grid(row=0, column=0, columnspan=2, sticky="we", padx=(button_pad), pady=(button_pad))
+                                 command=b_func(self, 1)).grid(row=0, column=0, columnspan=2, sticky="we", padx=(button_pad), pady=(button_pad))
         self.b2 = csTK.CTkButton(self,
                                  text="Menu", font=button_font,
                                  image=b2_img,  fg_color="#964932",
                                  width=200, height=200,
                                  border_width=button_bd_width, border_spacing=button_bd_spacing, border_color=button_bd_colour,
-                                 command=b2_func).grid(row=1, column=0, padx=(button_pad), pady=(button_pad))
+                                 command=b_func(self, 2)).grid(row=1, column=0, padx=(button_pad), pady=(button_pad))
         self.b3 = csTK.CTkButton(self,
                                  text="Pizza Maintain", font=button_font,
                                  image=b3_img,  fg_color="#4D9632",
                                  width=200, height=200,
                                  border_width=button_bd_width, border_spacing=button_bd_spacing, border_color=button_bd_colour,
-                                 command=b3_func).grid(row=1, column=1, padx=(button_pad), pady=(button_pad))
+                                 command=b_func(self, 3)).grid(row=1, column=1, padx=(button_pad), pady=(button_pad))
