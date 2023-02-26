@@ -1,14 +1,13 @@
 from main import *
 
 
-
 class RightFrame(csTK.CTkFrame):
-    right_windows = [w_menu, w_order, w_maintain, w_help]
-    w_menu = menu
 
-    def __init__(self, container, choice: int):
+    def __init__(self, container):
         super().__init__(container)
-        self.choice = choice
         self.container = container
-        def window_to_show(self):
+
+    def menu(self, container):
+        menu_lb = csTK.CTkLabel(master=container, text="HELLO").grid(row=0, column=0)
+
 
