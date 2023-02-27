@@ -1,6 +1,7 @@
 from main import *
 
 
+
 class MainFrame(csTK.CTkFrame):
 
     def __init__(self, container):
@@ -13,11 +14,13 @@ class MainFrame(csTK.CTkFrame):
         b_fg_color = "#7b3296"
         b_font = csTK.CTkFont(family="Arial", size=50, weight="bold")
         b_corner_radius = 10
+        b_padx = 10
+        b_pady = 0
 
         # Adding Function to change the Main Frame
         def sb_func(value):
-            # for widget in main_frame.winfo_children():
-            # widget.destroy()
+            for widget in self.winfo_children():
+                widget.destroy()
 
             if value == "Menu":
                 print("Menu Chosen")
@@ -42,13 +45,10 @@ class MainFrame(csTK.CTkFrame):
             else:
                 print("nothing chosen")
 
-        # Adding Segmented Button to the Main Window
-        #self.top_frame = csTK.CTkFrame(self, border_width=b_border_width).grid(row=0, column=0, sticky="we")
-        #self.bottom_frame = csTK.CTkFrame(self, border_width=b_border_width).grid(row=1, column=0, sticky="we")
         main_button = csTK.CTkSegmentedButton(self,
                                               values=["Menu", "Order", "Maintain", "Help"],
                                               command=sb_func,
                                               font=b_font,
                                               border_width=b_border_width,
                                               fg_color=b_fg_color,
-                                              corner_radius=b_corner_radius,).grid(row=0, column=0)
+                                              corner_radius=b_corner_radius).grid(row=0, column=0, padx=b_padx, pady=b_pady)
