@@ -10,10 +10,11 @@ class MainFrame(csTK.CTkFrame):
 
 # Frame Configuration
         self.configure(self, fg_color="white")
+        self.bf = bottom_frame.BottomFrame(self)
 
 # Adding Bottom Frame Cointaining other frames
-        self.bf = bottom_frame.BottomFrame(self)
-        self.bf.grid(row=1, column=0, padx=10, pady=10)
+        #self.bf = bottom_frame.BottomFrame(self)
+        #self.bf.grid(row=1, column=0, padx=10, pady=10)
 
         # Segmented Button Specification
         b_border_width = 5
@@ -23,36 +24,16 @@ class MainFrame(csTK.CTkFrame):
         b_padx = 10
         b_pady = 0
 
-        # Adding Function to change the Main Frame
-        def sb_func(value):
-            self.bf.clear()
+        def b_cm(value):
+            print("Wybrano: ", value)
+            self.bf.grid(row=1, column=0)
 
-            if value == "Menu":
-                print("Menu Chosen")
-                menu_frame = mf.MenuFrame(self)
-                menu_frame.grid(row=1, column=0)
+            self.bf.sb_func(value)
 
-            elif value == "Order":
-                print("Order Chosen")
-                order_frame = of.OrderFrame(self)
-                order_frame.grid(row=1, column=0)
-
-            elif value == ("Maintain"):
-                print("Maintain Chosen")
-                maintain_frame = mpf.MaintainFrame(self)
-                maintain_frame.grid(row=1, column=0)
-
-            elif value == "Help":
-                print("Help Chosen")
-                help_frame = hf.HelpFrame(self)
-                help_frame.grid(row=1, column=0)
-
-            else:
-                print("nothing chosen")
 
         main_button = csTK.CTkSegmentedButton(self,
                                               values=["Menu", "Order", "Maintain", "Help"],
-                                              command=sb_func,
+                                              command=b_cm,
                                               font=b_font,
                                               border_width=b_border_width,
                                               fg_color=b_fg_color,

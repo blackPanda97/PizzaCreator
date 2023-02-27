@@ -1,8 +1,4 @@
 import customtkinter as csTK
-import menu_frame as mf
-import order_frame as of
-import maintain_frame as mpf
-import help_frame as hf
 import main_frame as mf
 
 
