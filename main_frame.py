@@ -1,4 +1,5 @@
 from main import *
+import bottom_frame
 
 
 
@@ -7,7 +8,12 @@ class MainFrame(csTK.CTkFrame):
     def __init__(self, container):
         super().__init__(container)
 
+# Frame Configuration
         self.configure(self, fg_color="white")
+
+# Adding Bottom Frame Cointaining other frames
+        self.bf = bottom_frame.BottomFrame(self)
+        self.bf.grid(row=1, column=0, padx=10, pady=10)
 
         # Segmented Button Specification
         b_border_width = 5
@@ -19,8 +25,7 @@ class MainFrame(csTK.CTkFrame):
 
         # Adding Function to change the Main Frame
         def sb_func(value):
-            for widget in self.winfo_children():
-                widget.destroy()
+            self.bf.clear()
 
             if value == "Menu":
                 print("Menu Chosen")
