@@ -15,7 +15,6 @@ class BottomFrame(csTK.CTkFrame):
     # Adding Function to change the Main Frame
     value=0
     def sb_func(self, value):
-        #self.bf.clear()
 
         if value == "Menu":
             print("Menu Chosen")
