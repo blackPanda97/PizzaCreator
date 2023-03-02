@@ -9,8 +9,8 @@ class BottomFrame(csTK.CTkFrame):
     def __init__(self, container):
         super().__init__(container)
 
-
-        self.label = csTK.CTkLabel(self, text="Bottom FRAME").grid(row=1, column=0)
+        self.configure(self, fg_color="#7b3296")
+        self.label = csTK.CTkLabel(self, text="Fottage").grid(row=1, column=0)
 
     # Adding Function to change the Main Frame
     value=0

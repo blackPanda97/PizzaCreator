@@ -9,12 +9,9 @@ class MainFrame(csTK.CTkFrame):
         super().__init__(container)
 
 # Frame Configuration
-        self.configure(self, fg_color="white")
+        self.configure(self)
         self.bf = bottom_frame.BottomFrame(self)
 
-# Adding Bottom Frame Cointaining other frames
-        #self.bf = bottom_frame.BottomFrame(self)
-        #self.bf.grid(row=1, column=0, padx=10, pady=10)
 
         # Segmented Button Specification
         b_border_width = 5

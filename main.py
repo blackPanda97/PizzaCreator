@@ -9,6 +9,7 @@ class MainWindow(csTK.CTk):
 # Main Window Configuration
         self.title("Pizzeria")
         self.minsize(600, 800)
+        self.configure(fg_color="#7b3296")
 
         main = mf.MainFrame(self)
         main.grid(row=0, column=0, sticky='we')
