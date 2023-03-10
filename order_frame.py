@@ -6,4 +6,17 @@ class OrderFrame(csTK.CTkFrame):
     def __init__(self, container):
         super().__init__(container)
 
-        self.label = csTK.CTkLabel(self, height=300, fg_color="blue", text="Order Frame").grid(row=0, column=0)
+        self.l1 = csTK.CTkLabel(self, text="1st name & Surname").grid(row=0, column=0, padx=(0,20))
+        self.name = csTK.CTkEntry(self, placeholder_text="Name").grid(row=0, column=1, padx=10)
+        self.surname = csTK.CTkEntry(self, placeholder_text="Surname").grid(row=0, column=2, padx=(10, 0))
+
+        self.l2 = csTK.CTkLabel(self, text="Street name & Street number").grid(row=1, column=0, padx=(0, 20))
+        self.str_name = csTK.CTkEntry(self, placeholder_text="Street name").grid(row=1, column=1, padx=10)
+        self.str_nr = csTK.CTkEntry(self, placeholder_text="Street number").grid(row=1, column=2, padx=(10, 0))
+
+        self.l3 = csTK.CTkLabel(self, text="House & Flat").grid(row=2, column=0, padx=(0, 20))
+        self.house_nr = csTK.CTkEntry(self, placeholder_text="House number").grid(row=2, column=1, padx=10)
+        self.flat_nr = csTK.CTkEntry(self, placeholder_text="Flat number").grid(row=2, column=2, padx=(10, 0))
+
+        self.l4 = csTK.CTkLabel(self, text="Phone Number").grid(row=3, column=0, padx=(0, 20))
+        self.phonenumber = csTK.CTkEntry(self, placeholder_text="Phone number").grid(row=3, column=1, padx=(10, 0))

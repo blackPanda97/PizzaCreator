@@ -15,24 +15,22 @@ class BottomFrame(csTK.CTkFrame):
     # Adding Function to change the Main Frame
     value=0
     def sb_func(self, value):
+        for widget in self.winfo_children():
+            widget.destroy()
 
         if value == "Menu":
-            print("Menu Chosen")
             menu_frame = mf.MenuFrame(self)
             menu_frame.grid(row=0, column=0)
 
         elif value == "Order":
-            print("Order Chosen")
             order_frame = of.OrderFrame(self)
             order_frame.grid(row=0, column=0)
 
         elif value == ("Maintain"):
-            print("Maintain Chosen")
             maintain_frame = mpf.MaintainFrame(self)
             maintain_frame.grid(row=0, column=0)
 
         elif value == "Help":
-            print("Help Chosen")
             help_frame = hf.HelpFrame(self)
             help_frame.grid(row=0, column=0)
 

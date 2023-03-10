@@ -17,7 +17,7 @@ class MainFrame(csTK.CTkFrame):
         b_border_width = 5
         b_fg_color = "#7b3296"
         b_font = csTK.CTkFont(family="Arial", size=50, weight="bold")
-        b_corner_radius = 10
+        b_corner_radius = 0
         b_padx = 10
         b_pady = 0
 
