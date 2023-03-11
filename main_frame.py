@@ -9,16 +9,15 @@ class MainFrame(csTK.CTkFrame):
         super().__init__(container)
 
 # Frame Configuration
-        self.configure(self)
         self.bf = bottom_frame.BottomFrame(self)
 
 
         # Segmented Button Specification
         b_border_width = 5
-        b_fg_color = "#7b3296"
+        b_fg_color = "#E6D386"
         b_font = csTK.CTkFont(family="Arial", size=50, weight="bold")
-        b_corner_radius = 0
-        b_padx = 10
+        b_corner_radius = 15
+        b_padx = 0
         b_pady = 0
 
         def b_cm(value):
@@ -34,4 +33,7 @@ class MainFrame(csTK.CTkFrame):
                                               font=b_font,
                                               border_width=b_border_width,
                                               fg_color=b_fg_color,
+                                              unselected_color="#D1595A",
+                                              selected_color="#671313",
+                                              unselected_hover_color="#5C7758",
                                               corner_radius=b_corner_radius).grid(row=0, column=0, padx=b_padx, pady=b_pady)
