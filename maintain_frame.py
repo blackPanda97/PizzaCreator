@@ -14,25 +14,15 @@ class MaintainFrame(csTK.CTkFrame):
         foreground_cl = "#E6D386"
         unselected_hover_cl = "#5C7758"
 
-#Add or Remove Button Function
-        def b_choice(value, value2=0):
-            print(value, value2)
+#Segmented Button Variables
+        #sg_var = ["Meat Toppings", "Veggie Toppings", "Cheese Toppings", "Sauces"]
+        variable = csTK.StringVar(value="Meat Toppings")
+
 
 #Segmented Button Function
         def op_choice(value):
             print(value)
-            if value == "Meat Toppings":
-                r = "meat_toppings"
-            elif value == "Veggie Toppings":
-                r = "veggie_toppings"
-            elif value == "Cheese Toppings":
-                r = "cheese_toppings"
-            elif value == "Sauces":
-                r = "sacue_toppings"
-            else:
-                print("wrong")
 
-            return r
 
 
         csTK.CTkLabel(self,
@@ -40,8 +30,9 @@ class MaintainFrame(csTK.CTkFrame):
                       text_color="black",
                       font=main_f).grid(row=0, column=2, padx=5)
 
-        csTK.CTkOptionMenu(self,
-                                values=("Meat Toppings", "Veggie Toppings", "Cheese Toppings", "Sauces"),
+        sb = csTK.CTkOptionMenu(self,
+                                values =["Meat Toppings", "Veggie Toppings", "Cheese Toppings", "Sauces"],
+                                variable=variable,
                                 font=main_f,
                                 fg_color=unselected_cl,
                                 button_color=unselected_cl,
@@ -61,15 +52,26 @@ class MaintainFrame(csTK.CTkFrame):
                       text_color="black",
                       font=main_f).grid(row=1, column=0)
 
-        csTK.CTkEntry(self,
+        ide = csTK.CTkEntry(self,
                       placeholder_text="Id",
                       font=main_f).grid(row=0, column=1)
-        csTK.CTkEntry(self,
+        namee = csTK.CTkEntry(self,
                       placeholder_text="Name",
                       font=main_f).grid(row=1, column=1)
 
+        # Add or Remove Button Function
+        def b_choice(value):
+            name = "H " + namee.get()
+
+            if value == "Add":
+                print("Adding"+name)
+            elif value == "Remove":
+                print("Removing")
+            else:
+                print("Nothing")
+
 #Buttons to submit the action
-        csTK.CTkSegmentedButton(self,
+        ar = csTK.CTkSegmentedButton(self,
                                 values=["Add", "Remove"],
                                 font=main_f,
                                 fg_color=foreground_cl,
