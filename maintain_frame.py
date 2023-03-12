@@ -12,7 +12,7 @@ class MaintainFrame(csTK.CTkFrame):
         selected_cl = "#671313"
         unselected_cl = "#D1595A"
         foreground_cl = "#E6D386"
-        unselected_hover_cl="#5C7758"
+        unselected_hover_cl = "#5C7758"
 
 #Add or Remove Button Function
         def b_choice(value, value2=0):
@@ -21,6 +21,18 @@ class MaintainFrame(csTK.CTkFrame):
 #Segmented Button Function
         def op_choice(value):
             print(value)
+            if value == "Meat Toppings":
+                r = "meat_toppings"
+            elif value == "Veggie Toppings":
+                r = "veggie_toppings"
+            elif value == "Cheese Toppings":
+                r = "cheese_toppings"
+            elif value == "Sauces":
+                r = "sacue_toppings"
+            else:
+                print("wrong")
+
+            return r
 
 
         csTK.CTkLabel(self,
